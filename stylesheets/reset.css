@@ -48,20 +48,26 @@ body {
   color: #000;
 }
 
-a {font-weight: bold;color:#000;}      /* unvisited link */
-a:visited {color:#000;}  /* visited link */
-a:hover {color:#000;}  /* mouse over link */
-a:active {color:#000;}  /* selected link */
+a {font-weight: bold;color:#2583cc;}      /* unvisited link */
+a:visited {color:#2583cc;}  /* visited link */
+a:hover {color:#2583cc;text-decoration: underline;}  /* mouse over link */
+a:active {color:#2583cc;}  /* selected link */
 
 header {
-  padding: 15px 0;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #999;
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -1px;
+}
+
+header h1 a, header h1 a:visited, header h1 a:hover, header h1 a:active {
+  color: #000;
 }
 
 header h2 {
@@ -133,7 +139,7 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 8px;
+  margin: 12px 0;
   font-size: 22px;
   font-weight: bold;
   color: #303030;
@@ -163,8 +169,10 @@ h6 {
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  padding-left: 15px;
   font-weight: 300;
+  font-size: 125%;
 }
 
 a {
@@ -200,8 +208,8 @@ dl dd {
 }
 
 footer {
-  padding-top: 20px;
-  padding-bottom: 30px;
+  border-top: 1px solid #999;
+  padding: 40px 0;
   margin-top: 40px;
   font-size: 13px;
   color: #aaa;
@@ -209,6 +217,10 @@ footer {
 
 footer a {
   color: #666;
+}
+
+footer p {
+  padding-left: 0;
 }
 
 /* MISC */
