@@ -1,0 +1,22 @@
+{
+  achievementList: [
+    {
+      title: "", // Text
+      caption: "", // Text
+      currentVersion: "" // Semver
+      path: "" // Absoute URL: the achievement path
+    }
+  ],
+  postList: [
+    {
+      title: "", // Text
+      caption: "", // Text
+      description: "", // HTML(aware of the escaping)
+      createdDate: "", // Date: mm-dd-yyyy
+      createdTime: "", // Time: hh:mm:ss
+      authorName: "", // Text
+      authorAvatar: "", // Absoute URL: the author avatar path
+      facebookCommentLink: "" // Absoute URL: the facebook comment URL
+    }
+  ]
+}
