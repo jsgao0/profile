@@ -73,9 +73,9 @@
           <h3><a href="http://apps.xyzprinting.com/textboard" target="_blank">3D Model Text Board</a></h3>
           <h3><a href="https://github.com/jsgao0/3DFont-Feeder" target="_blank">3D Font Feeder Web Service</a></h3>
         </div>
-        <div class="half s-full float-left">
+        <div id="postBlock" class="half s-full float-left">
           <h2>Posts</h2>
-          <p>Constructing...</p>
+          <p>Load...</p>
         </div>
         <div class="clear"></div>
       </div>
@@ -106,6 +106,46 @@
         pageTracker._trackPageview();
       } catch(err) {}
     </script>
+    <script type="text/javascript">
+      // Source: http://jsfiddle.net/gloverdonovan/smgd7/
+      var $parseRSS = function (paramsObj) {
+          var base = "https://ajax.googleapis.com/ajax/services/feed/load",
+              params = "?v=1.0&num=" + paramsObj.count + "&callback=?&q=" + paramsObj.url,
+              url = base + params;
+          $.ajax({
+              url: url,
+              dataType: "json",
+              beforeSend: paramsObj.beforeSend()
+          }).done(function (data) {
+            paramsObj.callback(data.responseData.feed.entries);
+          });
+      };
 
+      $parseRSS({
+          url: "https://jsgao0.wordpress.com/feed/",
+          count: 10,
+          beforeSend: function() {
+            $('#postBlock').remove('> h3');
+            $('#postBlock').remove('> p')
+            $('#postBlock').append('<p>Loading...</p>');
+          },
+          callback: function (posts) {
+            $('#postBlock > p').remove();
+            posts.forEach(function(post) {
+              var title = post.title,
+                  //date = new Date.parse(post.publishedDate),
+                  link = post.link;
+              $('#postBlock').append(
+                $('<h3>').append(
+                  $('<a>').attr({
+                    href: link,
+                    target: '_blank'
+                  }).text(title)
+                )
+              )
+            });
+          }
+      });
+    </script>
   </body>
 </html>
