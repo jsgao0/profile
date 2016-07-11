@@ -50,7 +50,8 @@ body {
 
 a {font-weight: bold;color:#2583cc;}      /* unvisited link */
 a:visited {color:#2583cc;}  /* visited link */
-a:hover {color:#2583cc;text-decoration: underline;}  /* mouse over link */
+/*a:hover {color:#2583cc;text-decoration: underline;}  /* mouse over link */
+a:hover img {opacity: .7;}
 a:active {color:#2583cc;}  /* selected link */
 
 header {
